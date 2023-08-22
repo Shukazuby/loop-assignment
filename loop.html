@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop ATM</title>
+</head>
+<body>
+    <script>
+        //   BANK ATM Assignment
+        alert("Please insert your card")
+        let accBal = 7000000
+        while(accBal === 7000000){
+        let atm = Number(prompt("Enter Pin"))
+        let pin = 2332;
+        if(atm == pin ) while(true){
+            let transaction = Number(prompt(`Select transaction type:
+            1. Withdrawal
+            2. Deposit
+            3. Balance Inquiry`));
+            if(transaction === 1){
+                Number(prompt("Enter Amount")) 
+                alert("Transaction processing. Please wait")
+        let receipt = Number(prompt(`Transaction Successful. Do you want a receipt?
+                    1. Yes
+                    2. No`)) 
+                    if(receipt === 1){
+                        alert("Printing receipt. Please wait.")
+                        alert("Remove receipt and card.")
+                        alert("Thank you for choosing Zbank");
+                    } else if (receipt === 2){
+                        alert("Remove your card.")
+                        alert("Thank you for choosing Zbank");
+                    } else{
+                        alert("Please select the right option");
+                    }
+            } else if(transaction === 2){
+          let recBank = Number(prompt(`Select Receiver's bank:
+            1. GTB
+            2. Access bank
+            3. Fist bank`));
+                if(recBank === 1 || 2 || 3){
+                let accNum = Number(prompt("Enter account number"))
+                let recAmount = Number(prompt(`Select amount to deposit :
+                1. #1000
+                2. #5,000
+                3. #10,000
+                4. #100,000`));
+                if(recAmount === 1 || 2 || 3 || 4){
+                            alert("Processing");
+                            alert("Congrats! Transaction Successful")
+                        } else{
+                            alert("Please select from the options");
+                        }
+                }
+                    
+        }else if(transaction === 3){
+            let accountBalance = 20000000 + " naira";
+            alert(`Your balance is ${accountBalance}`)
+        } else{
+            alert("Please select the right option")
+        }
+
+        }else{
+            alert("You have entered the wrong pin. Try again")
+
+        }
+   
+        }
+    </script>
+</body>
+</html>
+  
+
