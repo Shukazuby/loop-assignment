@@ -5,10 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>loop ATM</title>
 </head>
+<style>
+    body{
+        background-color: bisque;
+        align-items: center;
+        text-align: center;
+    }
+    .welcome{
+        margin-top: 280px;
+    }
+    .bank{
+        color: blue;
+    }
+    button{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+        background-color: blue;
+        border-radius: 10px;
+        color: white;
+    }
+    p{
+        font-style: italic;
+        color: black;
+        font-size: 14px;
+    }
+</style>
+
 <body>
+
+    <div class="welcome">
+        <h1>Welcome to <span class="bank">Zbank</span> </h1>
+        <p>Please insert your card</p>
+        <button onclick="atm()">Card here</button>
+    </div>
+    
     <script>
+function atm(){
         //   BANK ATM Assignment
-        alert("Please insert your card")
+        // alert("Please insert your card")
         let accBal = 7000000
         while(accBal === 7000000){
         let atm = Number(prompt("Enter Pin"))
@@ -67,6 +103,7 @@
         }
    
         }
+    }
     </script>
 </body>
 </html>

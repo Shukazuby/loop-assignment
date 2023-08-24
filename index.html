@@ -5,9 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>loop USSD</title>
 </head>
+<style>
+    body{
+        background-color: bisque;
+        align-items: center;
+        text-align: center;
+    }
+    .welcome{
+        margin-top: 280px;
+    }
+    .bank{
+        color: blue;
+    }
+    button{
+        padding: 10px;
+        background-color: blue;
+        border-radius: 10px;
+        color: white;
+    }
+</style>
 <body>
-    <script>
 
+<div class="welcome">
+    <h1>Welcome to <span class="bank">Zbank</span> </h1>
+    <button onclick="ussd()">USSD</button>
+</div>
+
+
+
+    <script>
+function ussd(){
     //   BANK USSD Assignment
         let accBal = 5000000
         while (accBal == 5000000){
@@ -132,7 +159,7 @@
             alert("Wrong pin!")
         }
 
-
+    }
 
     
     </script>
