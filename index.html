@@ -10,9 +10,12 @@
         background-color: bisque;
         align-items: center;
         text-align: center;
+        width: auto;
+        display: flex;
+        justify-content: center;
     }
     .welcome{
-        margin-top: 280px;
+        margin-top: 250px;
     }
     .bank{
         color: blue;
@@ -23,11 +26,24 @@
         border-radius: 10px;
         color: white;
     }
+    p{
+        font-style: italic;
+        color: black;
+        font-size: 14px;
+    }
+    a{
+        text-decoration: none;
+        color: brown;
+    }
+
 </style>
 <body>
 
 <div class="welcome">
+    <p>Loop project</p>
     <h1>Welcome to <span class="bank">Zbank</span> </h1>
+    <p>See the ATM <a href="loop.html">here</a></p>
+    <p>USSD Code is <b>202</b></p>
     <button onclick="ussd()">USSD</button>
 </div>
 
@@ -48,15 +64,15 @@ function ussd(){
             if(bank === 1){
                 prompt("Input Beneficiary's Bank") 
                 Number(prompt("Input Amount"))
-                prompt(`Add Beneficiary
+            let pickBeneficiary = +prompt(`Add Beneficiary
                 1. Marzooqa Shuka
                 2. Zubaidat Shuka
                 3. Fauzeeyah Shuka`);
-                let sure = prompt(`Are You Sure? 
-                1. Yes
-                2. No`)  
-                    if (sure === 1 ){
-                        alert("Click OK to Proceed")
+                // let sure = prompt(`Are You Sure? 
+                // 1. Yes
+                // 2. No`)  
+                    if (pickBeneficiary === 1 || 2 || 3){
+                        // alert("Click OK to Proceed")
                         alert("Congrats! Transaction Successful")
                     } else{
                         alert("Please try again")
@@ -68,7 +84,7 @@ function ussd(){
                     if(airtime == "1"){
                     let airtimeAmount = Number(prompt("Enter Amount"))
                         alert("You are about to buy airtime for yourself")
-                    let enterPin = Number(prompt("Enter Pin"))
+                    let enterPin = Number(prompt("Enter USSD code"))
                             if(enterPin == pin){
                                 alert(`You have successfully purchase airtime of ${airtimeAmount}`);             
                             }else{
@@ -79,16 +95,25 @@ function ussd(){
                     let phoneNum = Number(prompt("Enter Phone Number"))
                     let  airtimeAmount = Number(prompt("Enter Airtime Amount"))
                         alert(`You are about to buy airtime for ${phoneNum}`)
-                        Number(prompt("Enter Pin"));
-                        alert(`You have successfully purchase airtime of ${airtimeAmount} for ${phoneNum}`)             
+                     let pin2 = Number(prompt("Enter USSD code"));
+                     if(pin2 == pin){
+
+                         alert(`You have successfully purchase airtime of ${airtimeAmount} for ${phoneNum}`)             
+                     }else{
+                         alert(`Please enter the right pin`)             
+                     }
                     }else{
                         alert("Please try again")
                     }
             } else if(bank === 3){
-                Number(prompt("Enter Account Number"))
-                        Number(prompt("Enter Pin"))
-                        alert("You will receive an SMS shortly")
-                        alert("Thanks for choosing Zbank");
+                // Number(prompt("Enter Account Number"))
+                     let pin3 = Number(prompt("Enter USSD code"))
+                     if(pin3 == pin){
+                         alert("You will receive an SMS shortly")
+                         alert("Thanks for choosing Zbank");
+                     }else{
+                         alert(`Please enter the right pin`)             
+                     }
                 
             } else {
                 alert("You have entered the wrong code")
@@ -100,7 +125,7 @@ function ussd(){
 
         }
         let pin =  Number(prompt("Enter USSD Code:"));
-        if(pin === 2020) {
+        if(pin === 202) {
             alert("Welcome to Zbank")
             let bank =  Number( prompt(`What do you want to do?
             1. Quick Transfer
@@ -108,21 +133,22 @@ function ussd(){
             3. Quick Balance`)); 
             if(bank === 1){
                 prompt("Input Beneficiary's Bank") 
-                Number(prompt("Input Amount"))
-                prompt(`Add Beneficiary
+                Number(prompt("Input Amount"));
+                let pickBeneficiary = prompt(`Add Beneficiary
                 1. Marzooqa Shuka
                 2. Zubaidat Shuka
                 3. Fauzeeyah Shuka`);
-                let sure = prompt(`Are You Sure? 
-                1. Yes
-                2. No`)  
-                    if (sure === 1 ){
-                        alert("Click OK to Proceed")
+                
+                // let sure = prompt(`Are You Sure? 
+                // 1. Yes
+                // 2. No`)  
+                    if(pickBeneficiary == "1" || "2" || "3" ){
+                        // alert("Click OK to Proceed")
                         alert("Congrats! Transaction Successful")
                     } else{
-                        alert("Please try again")
+                        alert("Please add a beneficiary")
                     }
-            } else if(bank === 2){
+            } else if(bank == 2){
                 let airtime = prompt(`Please Select Option
                     1. Buy For Self
                     2. Buy for Others`);  
@@ -140,8 +166,12 @@ function ussd(){
                     let phoneNum = Number(prompt("Enter Phone Number"))
                     let  airtimeAmount = Number(prompt("Enter Airtime Amount"))
                         alert(`You are about to buy airtime for ${phoneNum}`)
-                        Number(prompt("Enter Pin"));
-                        alert(`You have successfully purchase airtime of ${airtimeAmount} for ${phoneNum}`)             
+                      let pin2 = Number(prompt("Enter Pin"));
+                      if(pin2 == pin){
+                          alert(`You have successfully purchase airtime of ${airtimeAmount} for ${phoneNum}`)             
+                      }else{
+                        alert('Please enter the right pin')
+                      }
                     }else{
                         alert("Please try again")
                     }
@@ -158,7 +188,7 @@ function ussd(){
         }else {
             alert("Wrong pin!")
         }
-
+        
     }
 
     

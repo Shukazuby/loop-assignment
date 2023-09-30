@@ -12,7 +12,7 @@
         text-align: center;
     }
     .welcome{
-        margin-top: 280px;
+        margin-top: 250px;
     }
     .bank{
         color: blue;
@@ -31,13 +31,20 @@
         color: black;
         font-size: 14px;
     }
+    a{
+        text-decoration: none;
+        color: brown;
+    }
 </style>
 
 <body>
 
     <div class="welcome">
+        <p>Loop project</p>
         <h1>Welcome to <span class="bank">Zbank</span> </h1>
+        <p>See the USSD <a href="index.html">here</a></p>
         <p>Please insert your card</p>
+        <p>ATM Pin is <b>2332</b> </p>
         <button onclick="atm()">Card here</button>
     </div>
     
@@ -55,7 +62,7 @@ function atm(){
             2. Deposit
             3. Balance Inquiry`));
             if(transaction === 1){
-                Number(prompt("Enter Amount")) 
+                Number(prompt(" Amount")) 
                 alert("Transaction processing. Please wait")
         let receipt = Number(prompt(`Transaction Successful. Do you want a receipt?
                     1. Yes
